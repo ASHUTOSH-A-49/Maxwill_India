@@ -30,20 +30,53 @@ const masonryItems = [
 ];
 
 const MasonryGrid = () => {
+    const extendedItems = [...masonryItems, ...masonryItems];
+
     return (
-        <section className="container mx-auto px-margin-desktop py-32 bg-background">
-            <h2 className="text-4xl font-display-xl font-bold uppercase tracking-widest mb-16 text-on-surface">Court Aesthetics & Action</h2>
-            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-8 space-y-8">
-                {masonryItems.map((item, index) => (
-                    <div key={index} className="relative overflow-hidden rounded-2xl shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] group break-inside-avoid border border-outline-variant/10 transition-all duration-500">
+        <section className="py-32 bg-background overflow-hidden relative">
+            <style>
+                {`
+                @keyframes auto-slide {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(calc(-50% - 1rem)); }
+                }
+                .animate-auto-slide {
+                    animation: auto-slide 40s linear infinite;
+                    will-change: transform;
+                }
+                .animate-auto-slide:hover {
+                    animation-play-state: paused;
+                }
+                `}
+            </style>
+            
+            <div className="container mx-auto px-margin-desktop mb-16 flex items-center justify-between">
+                <h2 className="text-4xl font-display-xl font-bold uppercase tracking-widest text-on-surface">Court Aesthetics & Action</h2>
+                <div className="hidden md:flex items-center gap-2 text-secondary-fixed-dim font-label-caps text-xs tracking-widest uppercase">
+                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Auto-Sliding Gallery
+                </div>
+            </div>
+            
+            <div className="flex gap-8 w-max animate-auto-slide px-8 md:px-margin-desktop">
+                {extendedItems.map((item, index) => (
+                    <div 
+                        key={index} 
+                        className="relative w-[280px] md:w-[400px] h-[380px] md:h-[500px] rounded-3xl overflow-hidden shrink-0 group border border-outline-variant/10 shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:-translate-y-2 transition-all duration-500 cursor-pointer"
+                    >
                         <img 
                             alt={item.title} 
-                            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" 
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                             src={item.image} 
                             loading="lazy"
                         />
-                        <div className="absolute bottom-0 w-full bg-gradient-to-t from-on-surface via-on-surface/80 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <p className="text-primary font-label-caps tracking-widest uppercase">{item.title}</p>
+                        <div className="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                        <div className="absolute bottom-0 left-0 w-full p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <div className="w-10 h-1 bg-primary mb-4 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"></div>
+                            <p className="text-surface-bright font-headline-md text-2xl font-bold tracking-wide leading-tight">{item.title}</p>
+                            <p className="text-primary font-label-caps text-xs tracking-widest uppercase mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                                Explore Scene
+                            </p>
                         </div>
                     </div>
                 ))}
