@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=Lexend:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>MAXWILL SPORTS | Engineered Precision</title>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#626362",
+                        "inverse-primary": "#ffb59b",
+                        "surface-container-highest": "#d5e5ef",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c7c6c5",
+                        "on-primary-fixed-variant": "#812900",
+                        "surface-container": "#e0f0fb",
+                        "on-primary-fixed": "#380d00",
+                        "outline-variant": "#e3bfb2",
+                        "tertiary": "#5e5e5d",
+                        "primary-fixed": "#ffdbcf",
+                        "surface-container-low": "#e7f6ff",
+                        "on-surface": "#0e1d25",
+                        "surface-variant": "#d5e5ef",
+                        "on-tertiary-container": "#2c2d2c",
+                        "primary": "#a93800",
+                        "tertiary-fixed": "#e3e2e0",
+                        "surface-bright": "#f4faff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a93800",
+                        "surface-dim": "#ccdce7",
+                        "primary-fixed-dim": "#ffb59b",
+                        "tertiary-container": "#949492",
+                        "on-tertiary-fixed": "#1b1c1b",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#551800",
+                        "error": "#ba1a1a",
+                        "on-background": "#0e1d25",
+                        "inverse-on-surface": "#e3f3fd",
+                        "on-secondary-fixed-variant": "#464746",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary-container": "#e0dfdf",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#e3e2e1",
+                        "primary-container": "#ff5f15",
+                        "inverse-surface": "#23323a",
+                        "surface": "#f4faff",
+                        "background": "#f4faff",
+                        "surface-container-high": "#daebf5",
+                        "tertiary-fixed-dim": "#c7c6c4",
+                        "secondary": "#5e5e5e",
+                        "outline": "#8f7066",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#5b4138"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-padding": "120px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Epilogue"],
+                        "display-xl": ["Epilogue"],
+                        "headline-lg": ["Epilogue"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "technical-data": ["Lexend"],
+                        "label-caps": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-xl": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "technical-data": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(244, 250, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .product-card-hover:hover .add-to-cart {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        input[type="range"] {
+            accent-color: #a93800;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm flex justify-between items-center h-20 px-margin-desktop w-full z-50">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary">MAXWILL</div>
+<nav class="hidden md:flex gap-10">
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="#">Paddles</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Activewear</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Footwear</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Gear</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Engineering</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary cursor-pointer transition-colors">search</span>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary cursor-pointer transition-colors">person</span>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary cursor-pointer transition-colors">shopping_bag</span>
+<span class="absolute -top-2 -right-2 bg-primary-container text-on-primary-container text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">3</span>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-section-padding px-margin-desktop max-w-container-max mx-auto">
+<!-- Header & Horizontal Filter -->
+<div class="mb-16">
+<h1 class="font-display-xl text-display-xl mb-8">Paddles</h1>
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-4">
+<div class="flex gap-12">
+<button class="font-label-caps text-label-caps text-primary border-b-2 border-primary -mb-[18px] pb-4 transition-all">PADDLES</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary -mb-[18px] pb-4 transition-all">TOPS</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary -mb-[18px] pb-4 transition-all">BOTTOMS</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary -mb-[18px] pb-4 transition-all">SHOES</button>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-technical-data text-technical-data text-on-surface-variant">SORT BY</span>
+<select class="bg-transparent font-technical-data text-technical-data border-none focus:ring-0 cursor-pointer">
+<option>NEWEST ARRIVALS</option>
+<option>PRICE: LOW TO HIGH</option>
+<option>PRICE: HIGH TO LOW</option>
+<option>PERFORMANCE RANK</option>
+</select>
+</div>
+</div>
+</div>
+<div class="flex gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-64 flex-shrink-0 hidden lg:block">
+<div class="sticky top-28 space-y-12">
+<div class="space-y-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant border-b border-outline-variant/10 pb-2">COLLECTIONS</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-sm border-outline-variant text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+<span class="font-body-md text-on-surface group-hover:text-primary transition-colors">Performance</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-sm border-outline-variant text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+<span class="font-body-md text-on-surface group-hover:text-primary transition-colors">Lifestyle</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded-sm border-outline-variant text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+<span class="font-body-md text-on-surface group-hover:text-primary transition-colors">Limited Edition</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-sm border-outline-variant text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+<span class="font-body-md text-on-surface group-hover:text-primary transition-colors">Carbon Series</span>
+</label>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant border-b border-outline-variant/10 pb-2">PRICE RANGE</h3>
+<div class="space-y-6">
+<input class="w-full h-1 bg-surface-container-highest rounded-full appearance-none" max="500" min="100" type="range" value="350"/>
+<div class="flex justify-between items-center">
+<span class="font-technical-data text-technical-data">$100</span>
+<span class="font-technical-data text-technical-data">$500</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant border-b border-outline-variant/10 pb-2">AVAILABILITY</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="border-outline-variant text-primary focus:ring-primary w-4 h-4" name="availability" type="radio"/>
+<span class="font-body-md text-on-surface group-hover:text-primary transition-colors">In Stock</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="border-outline-variant text-primary focus:ring-primary w-4 h-4" name="availability" type="radio"/>
+<span class="font-body-md text-on-surface group-hover:text-primary transition-colors">Pre-Order</span>
+</label>
+</div>
+</div>
+<div class="pt-8">
+<p class="font-technical-data text-technical-data text-on-surface-variant italic">Showing 24 of 82 products</p>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-gutter gap-y-16">
+<!-- Product 1 -->
+<div class="group product-card-hover">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low mb-6 rounded-xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional carbon fiber pickleball paddle with a sleek matte finish, placed on a clean white gallery-style plinth. The lighting is soft and architectural, casting minimal shadows. The background is a soft platinum grey, embodying a high-performance luxury sports aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVBuLga2URC1DfSICt5w_SpkZXMXgGXcHenNViecFJYiTPEnOEFuSK3ayCrF7NlEintOvrYIQFzZy-vRDimCuoqHV26XqEJ8W0d-924oOa3dg67TNSV94YJ7GVPh2kgtFvfJ7aHNS0XkOSAH0VCHv9eqo1bPG0O9rJtVoDSjKj0N25etliHa0fMlyZnE3GUof9BsUvqS8F-yrpElZqVVP1omO25rSlNDrYIMJxUa2MRm9LnsLXYVI268buBHPzJBB_YJMivIiOGlip"/>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[80%] add-to-cart translate-y-4 opacity-0 transition-all duration-300">
+<button class="w-full bg-primary-container text-on-primary-container py-3 font-label-caps text-label-caps tracking-widest shadow-xl">QUICK VIEW</button>
+</div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/80 backdrop-blur-md px-3 py-1 rounded-full">
+<span class="font-technical-data text-[10px] text-primary">NEW SEASON</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h2 class="font-headline-md text-body-lg font-bold tracking-tight">VORTEX PRO C1</h2>
+<p class="font-technical-data text-technical-data text-on-surface-variant uppercase">CARBON FIBER REINFORCED</p>
+</div>
+<p class="font-headline-md text-body-lg">$249.00</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group product-card-hover">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low mb-6 rounded-xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A premium black athletic performance paddle with copper accents, showcased in a minimalist studio environment. The composition is clean and focused, with ethereal depth and a soft glow highlighting the technical texture of the face. The mood is sophisticated and exclusive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABn6IRKOxxoh-LwYRbeMwJnKl-YQijYWONjVmU2ktBkj_LnGFckiLCZkcUo013juIZKo_flttb1RWnrTEiVEOw1_P7H3uUnFoCwZOQ-rZYrtpsldOIe-bS4yIFhLCBwnzURRrB8gWc5qo-wwyzdZII4f-OovM9jy2gLMi-GPTb0wW6xjz-_NIE5GWHoCS-ibzQsv6g-8ueR5OVrpuPnxL5IZ0KWe9qGv0hEJSXpl30dIe90ve13c8VhEE_PUriC9Xm6Z8MAGntHMfD"/>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[80%] add-to-cart translate-y-4 opacity-0 transition-all duration-300">
+<button class="w-full bg-primary-container text-on-primary-container py-3 font-label-caps text-label-caps tracking-widest shadow-xl">QUICK VIEW</button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h2 class="font-headline-md text-body-lg font-bold tracking-tight">ONYX ELITE X</h2>
+<p class="font-technical-data text-technical-data text-on-surface-variant uppercase">LIMITLESS SPIN TECHNOLOGY</p>
+</div>
+<p class="font-headline-md text-body-lg">$285.00</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group product-card-hover">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low mb-6 rounded-xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A limited edition white and gold performance paddle reflecting a light luxury sports aesthetic. The paddle is suspended in a bright, airy space with soft architectural shadows and a hint of glassmorphism in the background elements. Pristine and technically precise visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_hkEKrrMi0o_HkrryK77KL_cHCO8AVTZQ76M0oYFqYidAoOfVSA-i1San1a-6FwT6Fh9oabH8A4Dez5HC3bPzkxqgAGfnzFPKqY2MP9rI6MXgGTEW7H_YG8KRYWicxE-7IYyP_OETg6p_flyPyz9Rad9aXa6q8alHz72WhYEQt291dz0LLpL8uPXLZaZlwS66GH6BxaY4PSigYFOZ_bFfVrfWC6GbRqPqEhVFju4WhDNqmjLBi9dHmJZjA3s30Pp6UPjw7X5VKZG8"/>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[80%] add-to-cart translate-y-4 opacity-0 transition-all duration-300">
+<button class="w-full bg-primary-container text-on-primary-container py-3 font-label-caps text-label-caps tracking-widest shadow-xl">QUICK VIEW</button>
+</div>
+<div class="absolute top-4 left-4 bg-primary px-3 py-1 rounded-full">
+<span class="font-technical-data text-[10px] text-on-primary">LIMITED EDITION</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h2 class="font-headline-md text-body-lg font-bold tracking-tight">AURUM SERIES VII</h2>
+<p class="font-technical-data text-technical-data text-on-surface-variant uppercase">COLLECTOR'S RELEASE</p>
+</div>
+<p class="font-headline-md text-body-lg">$320.00</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group product-card-hover">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low mb-6 rounded-xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of high-performance technical fabric with an intricate carbon weave pattern. The lighting is moody yet bright, highlighting the structural precision of the material. The aesthetic is clean, athletic, and high-end, utilizing the brand's core palette of platinum and slate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAizjdPMlF-URs0JrVRqyQmtejdn5bR0JmejVE2baFi-C5Oa4HXhZcKa42_lcQbjNbbb7qRjg66EQVFbATbEA_bk2Snsh4r0BbhyquV2KWcIf0dQzuVDmN4mPw9JsBQZ2Nxq1j062gQLXWCFE1UGuP9Gn0OKteJp9RjdrN8Jg1ACbVsWn7CVXYrmWh5HnglEaF1qxiLOFbXLaE5Srm3J5KCfgVpLF_JXvRtzDuQvQ6NxSeJ0tnGdSVHDvCn7jVXAfz_k_DnPJegN9QD"/>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[80%] add-to-cart translate-y-4 opacity-0 transition-all duration-300">
+<button class="w-full bg-primary-container text-on-primary-container py-3 font-label-caps text-label-caps tracking-widest shadow-xl">QUICK VIEW</button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h2 class="font-headline-md text-body-lg font-bold tracking-tight">KINETIC CORE Z</h2>
+<p class="font-technical-data text-technical-data text-on-surface-variant uppercase">SHOCK ABSORPTION FOAM</p>
+</div>
+<p class="font-headline-md text-body-lg">$195.00</p>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="group product-card-hover">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low mb-6 rounded-xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A pair of high-performance court shoes in a minimalist white and signature orange colorway. The shoes are arranged asymmetrically on a matte white surface with soft, diffused lighting that emphasizes their aerodynamic shape and premium materials. High-key luxury athletic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoHegtS5VKgx6PsmehlmNGhcUPxfYvoM8IGYYJedNO4HZS2xFQn6cW3Cmv6two_Bx-XgSH-MKFTg917_n0OnbtttfsPk2BIx7CRi30ka06A875h1Hm-KhDnkz6KSEGjLl02cx9UuF318pb5eF8ijHQgeZC7JbOmgfEQ89PBY8aa-JTEunjbkEnW9TjxZdrb0vKc-oY1DDHEiB4ONeAEdHsxCTnHaZZcA0KwyUi1-tiYWP8XdtWfPw5mxh3I0arJIRNwK_xA3iddA7S"/>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[80%] add-to-cart translate-y-4 opacity-0 transition-all duration-300">
+<button class="w-full bg-primary-container text-on-primary-container py-3 font-label-caps text-label-caps tracking-widest shadow-xl">QUICK VIEW</button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h2 class="font-headline-md text-body-lg font-bold tracking-tight">ACE COURT MASTER</h2>
+<p class="font-technical-data text-technical-data text-on-surface-variant uppercase">MULTI-DIRECTIONAL GRIP</p>
+</div>
+<p class="font-headline-md text-body-lg">$165.00</p>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="group product-card-hover">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low mb-6 rounded-xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Premium athletic accessories including a structured gear bag and sweatbands in a cohesive platinum and alabaster color palette. The composition is architectural and minimalist, reflecting an airy and exclusive luxury lifestyle for high-performance athletes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtH6rODopf5Hy0VJyoNSsRx0lQtZsXxWHnmuvd9HZLpcfackAgsqPhruy9RuqIYAv-_5uMlZOHm8BLKrvUSYxmZZW5ZuTyQ_m-KDDSzLVZMiHPjCSUtt4GLSL5Mbi1ToFB3uE-6EQJtIcJgCDhYws2MLeNDxsi266nChJ41N2dyCxIl9nlx2H2r4xWH60MlwLNvEPaAhPsR9OxEX3CmVBY_mlCDj3FCmGp5rhkD3HpFyeek0p1qUPZzKepy3DL3QHN64HRVJe_nSSg"/>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[80%] add-to-cart translate-y-4 opacity-0 transition-all duration-300">
+<button class="w-full bg-primary-container text-on-primary-container py-3 font-label-caps text-label-caps tracking-widest shadow-xl">QUICK VIEW</button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h2 class="font-headline-md text-body-lg font-bold tracking-tight">CARBON DUFFEL 45L</h2>
+<p class="font-technical-data text-technical-data text-on-surface-variant uppercase">WATER-RESISTANT NYLON</p>
+</div>
+<p class="font-headline-md text-body-lg">$140.00</p>
+</div>
+</div>
+</div>
+<!-- Load More / Pagination -->
+<div class="mt-24 flex flex-col items-center gap-8">
+<button class="px-12 py-4 border border-outline-variant text-on-surface font-label-caps text-label-caps tracking-widest hover:bg-surface-variant transition-colors">LOAD MORE PRODUCTS</button>
+<div class="flex gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-on-primary font-technical-data">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors font-technical-data">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors font-technical-data">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors font-technical-data">4</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-padding border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md text-primary mb-6">MAXWILL</div>
+<p class="font-body-md text-on-surface-variant pr-8">Redefining performance through architectural precision and high-tech engineering.</p>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-primary">SHOP</h4>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">All Products</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Performance Gear</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Limited Editions</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Store Locator</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-primary">SUPPORT</h4>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-primary">NEWSLETTER</h4>
+<p class="font-body-md text-on-surface-variant">Subscribe for exclusive performance insights.</p>
+<div class="flex border-b border-outline">
+<input class="bg-transparent border-none focus:ring-0 w-full font-label-caps text-[10px] py-2" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="text-primary hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-20 text-center px-margin-desktop border-t border-outline-variant/10 pt-8">
+<p class="font-body-md text-on-surface-variant text-[12px] tracking-widest opacity-60">© 2024 MAXWILL SPORTS. ENGINEERED PRECISION.</p>
+</div>
+</footer>
+</body></html>

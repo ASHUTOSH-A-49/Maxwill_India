@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const products = [
   {
     name: 'Maxwill Victory Pro X MVP1MX Extended Paddle',
@@ -19,32 +21,72 @@ const products = [
 export default function TrendingProducts() {
   return (
     <section
-      className="bg-[#f4faff] relative"
+      className="bg-[#f4faff] relative overflow-hidden"
       style={{ padding: '120px 64px' }}
     >
       <div className="max-w-[1440px] mx-auto">
-        <h2 className="font-headline-lg text-[#0e1d25] mb-12 text-center">Trending Products</h2>
+        <div className="flex flex-col items-center mb-24">
+          <h2 className="font-headline-lg text-[#0e1d25] font-black text-center relative inline-block -mt-[5px]">
+            Trending Products
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: '100%' }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="h-1.5 bg-[#a93800] mt-2 rounded-full mx-auto"
+            />
+          </h2>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {products.map((p) => (
-            <div key={p.name} className="glass-panel rounded-2xl p-6 group">
+          {products.map((p, idx) => (
+            <motion.div 
+              key={p.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ 
+                y: -12,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className="glass-panel rounded-2xl p-6 group cursor-pointer bg-white/50 backdrop-blur-sm border border-white/20 shadow-xl shadow-blue-900/5 transition-all duration-300 hover:shadow-2xl hover:shadow-[#a93800]/10"
+            >
               <div className="relative mb-6 overflow-hidden rounded-xl bg-white flex items-center justify-center" style={{ aspectRatio: '1/1' }}>
-                <img
+                <motion.img
                   src={p.img}
                   alt={p.name}
-                  className="w-3/4 h-3/4 object-contain group-hover:scale-105 transition-transform duration-500"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.5 }}
+                  className="w-3/4 h-3/4 object-contain"
                 />
-                <div className="absolute inset-0 bg-[#f4faff]/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
-                  <button className="glass-pill px-6 py-2 text-[#0e1d25] font-technical-data uppercase hover:bg-white transition-colors rounded-full">
+                <div className="absolute inset-0 bg-[#0e1d25]/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                  <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-40 py-2.5 bg-white text-[#0e1d25] font-bold uppercase tracking-wider text-xs rounded-full shadow-lg"
+                  >
                     Quickview
-                  </button>
-                  <button className="bg-[#a93800] text-white px-6 py-2 font-technical-data uppercase hover:bg-[#ff5f15] transition-colors rounded-full">
+                  </motion.button>
+                  <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-40 py-2.5 bg-[#a93800] text-white font-bold uppercase tracking-wider text-xs rounded-full shadow-lg hover:bg-[#ff5f15] transition-colors"
+                  >
                     Add to Cart
-                  </button>
+                  </motion.button>
                 </div>
               </div>
-              <h3 className="font-technical-data text-[#0e1d25] mb-2">{p.name}</h3>
-              <p className="font-body-lg text-[#a93800] font-bold">{p.price}</p>
-            </div>
+              <h3 className="font-technical-data text-[#0e1d25] font-bold text-lg mb-2 line-clamp-2">{p.name}</h3>
+              <div className="flex items-center justify-between mt-auto">
+                <p className="font-body-lg text-[#a93800] font-black text-xl">{p.price}</p>
+                <div className="flex gap-1">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <div key={s} className="w-1.5 h-1.5 rounded-full bg-[#a93800]" />
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
